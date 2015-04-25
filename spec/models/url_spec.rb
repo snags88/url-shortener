@@ -29,9 +29,17 @@ RSpec.describe Url, type: :model do
     end
   end
 
-  describe '#shorten_url' do
-    it 'creates the shortest url'
-    it 'creates a unique url'
+  describe '#random_url' do
+    let(:url){build(:url)}
+    it 'generates a random 6 character url' do
+      short_url = url.send(:random_url)
+      expect(short_url.length).to eq(6)
+    end
+    it 'will generate a unqiue url' do
+      short_url = url.send(:random_url)
+      short_url2 = url.send(:random_url)
+      expect(short_url).not_to eq(short_url2)
+    end
   end
 
 end
