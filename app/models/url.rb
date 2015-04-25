@@ -1,11 +1,20 @@
 class Url < ActiveRecord::Base
-  before_create :shorten_url
+  before_create :shorten_url, :add_protocol
   validates :original, presence: true
   validates :shortened, uniqueness: true
+
+  def increment_view_count
+    self.views += 1
+    self.save
+  end
 
   private
     def shorten_url
       self.shortened = random_url
+    end
+
+    def add_protocol
+      self.original = "http://" + self.original
     end
 
     def random_url

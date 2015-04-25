@@ -1,2 +1,7 @@
-<h1>Urls#index</h1>
-<p>Find me in app/views/urls/index.html.erb</p>
+<h1>Urls</h1>
+
+<ol>
+  <%- @urls.each do |url| -%>
+    <li><%= url.original %> | <%= url.shortened %> | <%= url.views %></li>
+  <%- end -%>
+</ol>

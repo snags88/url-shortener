@@ -42,4 +42,22 @@ RSpec.describe Url, type: :model do
     end
   end
 
+  describe '#increment_view_count' do
+    let(:url){build(:url)}
+    it 'increases views by 1' do
+      original_count = url.views
+      url.increment_view_count
+      new_count = url.views
+      expect(original_count + 1).to eq(new_count)
+    end
+  end
+
+  describe '#add_protocol' do
+    it 'adds the protocol to the original url' do
+      url = build(:url, original: "www.example.com")
+      url.send(:add_protocol)
+      expect(url.original).to eq("http://www.example.com")
+    end
+  end
+
 end
