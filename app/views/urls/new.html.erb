@@ -5,17 +5,11 @@
         <h1>Shorten the URL</h1>
       </div>
       <div class="form">
-        <%= form_for @url, remote: true do |f| %>
-          <div class="form-group">
-            <%= f.text_field :original, :class => "input-lg col-sm-12", :placeholder => "Enter URL here..." %>
-
-          <%= f.submit "Shorten!", :class => "url_submit" %>
-          </div>
-        <%- end -%>
+        <%= render 'urls/form', url: @url %>
       </div>
     </div>
 
-    <div id="shortened_url"></div>
+    <div id="shortened_url" class="center">Test Text</div>
   </div>
 </div>
 

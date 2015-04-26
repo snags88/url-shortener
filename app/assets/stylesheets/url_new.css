@@ -4,9 +4,24 @@
 }
 
 #shorten-form {
-  margin-top: 100px;
+  margin-top: 65px;
 }
 
-.url_submit {
-  display: none;
+span.form-addon {
+  font-size: 18px;
+}
+
+.title {
+  padding-bottom: 25px;
+  color: #34495e;
+  font-weight: bolder;
+}
+
+.shorten-background {
+  background: #1abc9c;
+  height: calc(100vh - 50px);
+}
+
+#shortened_url {
+
 }

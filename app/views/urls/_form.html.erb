@@ -1,0 +1,11 @@
+<%= form_for url, remote: true do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon form-addon">http://</span>
+      <%= f.text_field :original, :class => "input-lg col-sm-12", :placeholder => "Enter URL here..." %>
+      <span class="input-group-btn">
+        <%= f.submit "Shorten!", :class => "btn btn-success btn-lg" %>
+      </span>
+    </div>
+  </div>
+<%- end -%>
