@@ -30,4 +30,20 @@ footer {
 .icon,
 .icon > li {
   display: inline-block;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.icon > li {
+  padding-right: 7px;
+}
+
+.icon a,
+.icon a:link,
+.icon a:visited,
+.icon a:hover,
+.icon a:active {
+  color: #bdc3c7;
+  text-decoration: none;
 }

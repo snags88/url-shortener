@@ -5,7 +5,7 @@
 
 .vertical-center {
   position: relative;
-  top: 40%;
+  top: 43%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -24,6 +24,10 @@ span.form-addon {
   padding-bottom: 25px;
   color: #34495e;
   font-weight: bolder;
+}
+
+#shorten-title {
+  font-size: 60px;
 }
 
 .shorten-background {
