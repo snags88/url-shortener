@@ -1,5 +1,5 @@
 <div class="shorten-background">
-  <div class="container">
+  <div class="container vertical-center">
     <div class="center" id="shorten-form">
       <div class="title">
         <h1>Shorten the URL</h1>
@@ -8,17 +8,28 @@
         <%= render 'urls/form', url: @url %>
       </div>
     </div>
-
-    <div id="shortened_url" class="center">Test Text</div>
   </div>
 </div>
 
 <div class="ranking-background">
   <div class="container">
-    <h2>Top 100 URLs</h2>
-
-    <ol>
-      <%= render partial: 'urls/top100', collection: @urls, as: :url  %>
-    </ol>
+    <div id="top-100">
+      <div class="title center">
+        <h2>Top 100 URLs</h2>
+      </div>
+      <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Original Link</th>
+            <th>Shortened Link</th>
+            <th>View Count</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%= render partial: 'urls/top100', collection: @urls, as: :url  %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

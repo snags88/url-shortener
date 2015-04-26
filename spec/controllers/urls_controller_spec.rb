@@ -65,7 +65,4 @@ RSpec.describe UrlsController, type: :controller do
       end
     end
   end
-
-
-
 end

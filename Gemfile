@@ -32,3 +32,4 @@ end
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'pg'
+gem 'zeroclipboard-rails'

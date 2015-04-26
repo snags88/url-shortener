@@ -3,7 +3,16 @@
   text-align: center;
 }
 
-#shorten-form {
+.vertical-center {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#shorten-form,
+#top-100 {
   margin-top: 65px;
 }
 
@@ -22,6 +31,26 @@ span.form-addon {
   height: calc(100vh - 50px);
 }
 
-#shortened_url {
+.ranking-background {
+  background: white;
+  min-height: 100vh;
+}
 
+.form-button {
+  width: 104px;
+  height: 54px;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+.hide {
+  display: none;
+}
+
+*.no-b-radius {
+  border-radius: 0px;
+}
+
+.no-b {
+  border: none;
 }
