@@ -22,16 +22,20 @@ span.form-addon {
 
 .title {
   padding-bottom: 25px;
-  color: #34495e;
   font-weight: bolder;
 }
 
 #shorten-title {
   font-size: 60px;
+  color: #ecf0f1;
+}
+
+#ranking-title {
+  color: #2c3e50;
 }
 
 .shorten-background {
-  background: #1abc9c;
+  background: #3498db;
   height: calc(100vh - 50px);
 }
 

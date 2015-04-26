@@ -9,6 +9,11 @@ class Url < ActiveRecord::Base
     self.save
   end
 
+  def self.my_find_or_create_by(params)
+    url = self.new(params).send(:add_protocol)
+    self.find_or_create_by(:original => url)
+  end
+
   private
     def shorten_url
       self.shortened = random_url
@@ -20,7 +25,7 @@ class Url < ActiveRecord::Base
 
     def random_url
       begin
-        url = SecureRandom.urlsafe_base64(4) #=> handles a little bit over 68 billion unqiue urls
+        url = SecureRandom.urlsafe_base64(4) #=> handles a little bit over 68 billion unique urls
       end while Url.where(:shortened => url).exists?
       url
     end

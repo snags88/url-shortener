@@ -7,7 +7,8 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.find_or_create_by(url_params)
+    binding.pry
+    @url = Url.my_find_or_create_by(url_params)
   end
 
   def show
