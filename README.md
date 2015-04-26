@@ -4,7 +4,7 @@
 
 ## Description
 
-Shorty is a url shortner built to take long urls and shorten them to allow users to share links easily. Shorty also displays the top 100 visited links.
+Shorty is a url shortner built to take long urls and shorten them to allow users to share links easily. Shorty also displays the top 100 visited links. [View the app here!](https://shorty-app.herokuapp.com/)
 
 ## Features
 
