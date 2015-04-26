@@ -1,7 +1,26 @@
-<h1>Shorten the URL</h1>
+<div class="shorten-background">
+  <div class="container">
+    <div class="center" id="shorten-form">
+      <div class="title">
+        <h1>Shorten the URL</h1>
+      </div>
 
-<%= form_for @url do |f| %>
-  <%= f.text_field :original %>
-  <%= f.submit "Shorten!"%>
-<%- end -%>
+    <%= form_for @url, remote: true do |f| %>
+      <%= f.text_field :original %>
+      <%= f.submit "Shorten!", :class => "btn btn-success btn-lg" %>
+    <%- end -%>
+    </div>
 
+    <div id="shortened_url"></div>
+  </div>
+</div>
+
+<div class="ranking-background">
+  <div class="container">
+    <h2>Top 100 URLs</h2>
+
+    <ol>
+      <%= render partial: 'urls/top100', collection: @urls, as: :url  %>
+    </ol>
+  </div>
+</div>

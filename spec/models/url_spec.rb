@@ -17,9 +17,15 @@ RSpec.describe Url, type: :model do
   end
 
   context 'invalid url' do
-    it 'is invalid without a url' do
+    it 'is invalid without an original url' do
       url = build(:url, original: nil)
       expect(url).not_to be_valid
+    end
+
+    it 'is invalid without a unqiue original url' do
+      url = create(:url, original: 'www.example.com')
+      url2 = build(:url, original: 'www.example.com')
+      expect(url2).not_to be_valid
     end
 
     it 'is invalid without a unqiue shortened url' do
@@ -53,10 +59,19 @@ RSpec.describe Url, type: :model do
   end
 
   describe '#add_protocol' do
-    it 'adds the protocol to the original url' do
-      url = build(:url, original: "www.example.com")
-      url.send(:add_protocol)
-      expect(url.original).to eq("http://www.example.com")
+    context 'does not have a protocol' do
+      it 'adds the protocol to the original url' do
+        url = build(:url, original: "www.example.com")
+        url.send(:add_protocol)
+        expect(url.original).to eq("http://www.example.com")
+      end
+    end
+    context 'already has a protocol' do
+      it 'does not add the protocol to the original url' do
+        url = build(:url, original: "http://www.example.com")
+        url.send(:add_protocol)
+        expect(url.original).to eq("http://www.example.com")
+      end
     end
   end
 
