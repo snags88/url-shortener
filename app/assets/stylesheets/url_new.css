@@ -6,3 +6,7 @@
 #shorten-form {
   margin-top: 100px;
 }
+
+.url_submit {
+  display: none;
+}
