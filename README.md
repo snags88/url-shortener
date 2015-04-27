@@ -44,6 +44,7 @@ Below is a short description on the technical side of Shorty.
 - Add pagination to the top 100 section
 - Consider using shorter URLs by determining how many characters can still be used by querying the database. For instance, if there are only 60 records that exist in the database, then a single character url can be provided. However, if there are 67 records, then a two character url must be returned. However, there are some performance issues to be considered.
 - Add more validation for user input. Currently, there is no check for a valid url.
+  - Blank urls, urls without valid characters.
 
 ## License
 
