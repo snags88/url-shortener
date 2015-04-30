@@ -7,7 +7,14 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.my_find_or_create_by(url_params)
+    @url = Url.my_find_or_build_by(url_params)
+    if @url
+      binding.pry
+      render :file => "/urls/create.js.erb"
+    else
+      binding.pry
+      render :file => "/urls/invalid.js.erb"
+    end
   end
 
   def show

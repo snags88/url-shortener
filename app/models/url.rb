@@ -9,9 +9,9 @@ class Url < ActiveRecord::Base
     self.save
   end
 
-  def self.my_find_or_create_by(params)
+  def self.my_find_or_build_by(params)
     url = self.new(params).send(:add_protocol)
-    self.find_or_create_by(:original => url)
+    self.find_by(:original => url) || self.new(params)
   end
 
   private
@@ -20,7 +20,7 @@ class Url < ActiveRecord::Base
     end
 
     def add_protocol
-      self.original = "http://" + self.original if self.original && !self.original[/http/]
+      self.original = "http://" + self.original if !self.original[/http/]
     end
 
     def random_url
