@@ -16,6 +16,10 @@
   margin-top: 65px;
 }
 
+#shortener-field {
+  width: 100%;
+}
+
 span.form-addon {
   font-size: 18px;
 }
